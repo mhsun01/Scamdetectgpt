@@ -66,7 +66,7 @@ def explain_scam_with_gpt(message: str) -> str:
 # ──────────────────────────────────────────────────────────────────────────────
 # Streamlit UI
 # ──────────────────────────────────────────────────────────────────────────────
-st.title("🔍 AI‑Powered Scam Detector with ChatGPT")
+st.title("AI‑Powered Scam Detector")
 
 user_input = st.text_area("Paste your message below:", height=150)
 
@@ -81,14 +81,13 @@ if st.button("Analyze"):
             scam = is_scam_gpt(user_input)
             if scam is None:
                 st.warning("⚠️ GPT unavailable—using fallback detection.")
-                st.error("⚠️ This message may be a SCAM.")
             elif scam:
-                st.error("⚠️ GPT thinks this message is a SCAM.")
+                st.error("⚠️ Thinks this message is likely a SCAM.")
                 explanation = explain_scam_with_gpt(user_input)
                 st.markdown("### 🤖 Why it might be a scam:")
                 st.write(explanation)
             else:
-                st.success("✅ GPT thinks this message is NOT a scam.")
+                st.success("✅ This message is likely NOT a scam.")
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Credits (bottom‑left)
