@@ -99,7 +99,7 @@ st.markdown("""
     bottom: 10px;
     left: 20px;
     right: auto;
-    font-size: 12px;
+    font-size: 13px;
     color: #666666;
 }
 </style>
