@@ -91,14 +91,15 @@ if st.button("Analyze"):
                 st.success("✅ GPT thinks this message is NOT a scam.")
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Credits (bottom-right)
+# Credits (bottom‑left)
 # ──────────────────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
 .footer {
     position: fixed;
     bottom: 10px;
-    right: 20px;
+    left: 20px;
+    right: auto;
     font-size: 12px;
     color: #666666;
 }
@@ -107,4 +108,3 @@ st.markdown("""
     Credits: Michael Sun, Ethan Soesilo, Shaurya Singh, Raul Shrestha, Adrhit Bhadauria, Rem Fellenz
 </div>
 """, unsafe_allow_html=True)
-
