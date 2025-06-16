@@ -28,7 +28,6 @@ def call_with_backoff(fn, max_retries=5, base_delay=1, **kwargs):
         except OpenAIError as e:
             st.error(f"OpenAI API error: {e}")
             return None
-    st.error("🚫 Too many retries—please try again later.")
     return None
 
 def is_scam_gpt(message: str) -> bool | None:
@@ -80,7 +79,7 @@ if st.button("Analyze"):
         else:
             scam = is_scam_gpt(user_input)
             if scam is None:
-                st.warning("⚠️ GPT unavailable—using fallback detection.")
+                st.warning("⚠️ GPT unavailable — Please try again later.")
             elif scam:
                 st.error("⚠️ Thinks this message is likely a SCAM.")
                 explanation = explain_scam_with_gpt(user_input)
