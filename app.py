@@ -2,10 +2,9 @@ import streamlit as st
 import os
 import re
 import openai
-from openai import OpenAI
-from openai.error import RateLimitError, OpenAIError
+from openai import OpenAI, RateLimitError, OpenAIError
 
-# Initialize OpenAI client (uses OPENAI_API_KEY from env or Streamlit secrets)
+# Initialize the OpenAI client (uses OPENAI_API_KEY from env/Streamlit secrets)
 client = OpenAI()
 
 # GPT‑based scam check
@@ -64,6 +63,7 @@ if st.button("Analyze"):
                 st.write(explanation)
             else:
                 st.success("✅ GPT thinks this message is NOT a scam.")
+
 
 
 
